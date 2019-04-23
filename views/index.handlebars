@@ -1,0 +1,35 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-6'>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class='col-md-6'>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-12 center-block'>
+            <h3>
+                Eat-Da-Burger
+            </h3>
+            <br>
+            <form class="create-form">
+                <input type='text' id='textbox'>
+                <br><br>
+                <input type="submit" id='submitBtn'>
+            </form>
+        </div>
+    </div>
+</div>
